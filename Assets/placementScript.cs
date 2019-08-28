@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class placementScript : MonoBehaviour
 {
+    public GameObject plane;
     // Start is called before the first frame update
     void Start()
     {
@@ -22,7 +23,8 @@ public class placementScript : MonoBehaviour
         var ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         float distToG = -1f;
         ground.Raycast(ray,out distToG);
-        this.transform.position = ray.GetPoint(distToG);
+        Vector3 nV = GameObject.Find("Plane").GetComponent<MakeGrid>().ToPlaneGrid(ray.GetPoint(distToG));
+        this.transform.position = nV;
         if(Input.GetKeyDown(KeyCode.Q)){
             Destroy(this.gameObject);
         }
