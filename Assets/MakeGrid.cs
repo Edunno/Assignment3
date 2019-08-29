@@ -7,7 +7,7 @@ public class MakeGrid : MonoBehaviour
 {
     private float x;
     private float z;
-    private int gridCount = 20;
+    private int gridCount = 30;
     // Start is called before the first frame update
     void Start()
     {
@@ -21,18 +21,10 @@ public class MakeGrid : MonoBehaviour
         
     }
     public Vector3 ToPlaneGrid(Vector3 oV){
-        for(int i = 0; i<gridCount;i++){
-            if(0.5*x/gridCount <= Math.Abs(oV.x%(i*x/gridCount))){
-                oV.x = i*x/gridCount;
-                i = gridCount;
-            }
-        }
-        for(int i = 0; i<gridCount;i++){
-            if(0.5*z/gridCount <= Math.Abs(oV.z%(i*z/gridCount))){
-                oV.z = i*z/gridCount;
-                i = gridCount;
-            }
-        }
+        int tempX =(int) (oV.x/(x/gridCount));
+        oV.x = tempX*(x/gridCount);
+        int tempZ = (int) (oV.z/(z/gridCount));
+        oV.z = tempZ*(z/gridCount);
         return oV;
     }
 }

@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d51f31e1640cab4c950c1afcd8224df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tower: {fileID: 187918, guid: 77a599bd67f72e24999e1d5d60f433d0, type: 3}
   plane: {fileID: 0}
 --- !u!1001 &7171427660025672719
 PrefabInstance:
@@ -20,6 +21,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3692076416690217729, guid: 77a599bd67f72e24999e1d5d60f433d0,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3692076416690217729, guid: 77a599bd67f72e24999e1d5d60f433d0,
+        type: 3}
+      propertyPath: attackSpeed
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 187918, guid: 77a599bd67f72e24999e1d5d60f433d0, type: 3}
       propertyPath: m_Name
       value: Tower Mage Variant
